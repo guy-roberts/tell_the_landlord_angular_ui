@@ -1,12 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-// used to create fake backend
-import { fakeBackendProvider } from './helpers/index';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { BaseRequestOptions } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -20,7 +15,7 @@ import { HomeComponent } from './home/index';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     routing
   ],
   declarations: [
@@ -32,10 +27,6 @@ import { HomeComponent } from './home/index';
     AuthGuard,
     AuthenticationService,
     UserService,
-    // providers used to create fake backend
-    // fakeBackendProvider,
-    MockBackend,
-    BaseRequestOptions
   ],
   bootstrap: [
     AppComponent
