@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../models/index';
-import { UserService } from '../services/index';
+import { Organisation } from '../models/index';
+import { OrganisationService } from '../services/index';
+import { JsonApiQueryData } from 'angular2-jsonapi';
+import { Datastore } from '../services/datastore';
 
 @Component({
   moduleId: module.id,
@@ -9,16 +11,18 @@ import { UserService } from '../services/index';
 })
 
 export class HomeComponent implements OnInit {
-  users: User[] = [];
+  organisations: Organisation[] = [];
 
-  constructor(private userService: UserService) { }
+  constructor(private organisationService: OrganisationService, private datastore: Datastore) { }
 
   ngOnInit() {
-    // get users from secure api end point
-    this.userService.getUsers()
-      .subscribe(users => {
-        this.users = users;
-      });
+    this.datastore.findAll(Organisation, {
+      page: { size: 10, number: 1 }
+    }).subscribe(
+      (organisations: JsonApiQueryData<Organisation>) => {
+        this.organisations  = organisations.getModels();
+        console.log(organisations.getModels());
+      }
+    );
   }
-
 }

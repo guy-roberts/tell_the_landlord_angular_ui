@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "^1.7.4",
     "@angular/animations": "^5.2.9",
     "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.9",
@@ -22,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/platform-server": "^5.2.9",
     "@angular/router": "^5.2.9",
+    "angular2-jsonapi": "^5.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
     "ts-helpers": "^1.1.1",
