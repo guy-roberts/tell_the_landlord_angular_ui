@@ -14,6 +14,10 @@ import { HomeComponent } from './home/index';
 import { Datastore } from './services/datastore';
 
 import { RequestInterceptor } from './interceptors/request.interceptor';
+import { ProfilesComponent } from './profiles/profiles.component';
+import { ReportsComponent } from './reports/reports.component';
+import { OfficersComponent } from './officers/officers.component';
+import { OrganisationsComponent } from './organisations/organisations.component';
 
 @NgModule({
   imports: [
@@ -26,7 +30,11 @@ import { RequestInterceptor } from './interceptors/request.interceptor';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ProfilesComponent,
+    ReportsComponent,
+    OfficersComponent,
+    OrganisationsComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },

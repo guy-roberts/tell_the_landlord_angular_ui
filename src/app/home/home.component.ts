@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
     }).subscribe(
       (organisations: JsonApiQueryData<Organisation>) => {
         this.organisations  = organisations.getModels();
-        console.log(organisations.getModels());
       }
     );
   }

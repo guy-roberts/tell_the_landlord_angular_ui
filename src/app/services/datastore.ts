@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Organisation } from '../models/organisation';
+import { Organisation } from '@models/organisation';
+import { Report } from '@models/report';
+import { Profile } from '@models/profile';
 
 import { JsonApiDatastoreConfig, JsonApiDatastore, DatastoreConfig } from 'angular2-jsonapi';
 
 const config: DatastoreConfig = {
   baseUrl: '/api',
   models: {
-    audit_type: Organisation,
+    organisation: Organisation,
+    profile: Profile,
+    report: Report
   }
 };
 
