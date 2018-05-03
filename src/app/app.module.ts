@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JsonApiModule } from 'angular2-jsonapi';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
@@ -25,7 +27,8 @@ import { OrganisationsComponent } from './organisations/organisations.component'
     BrowserModule,
     FormsModule,
     routing,
-    JsonApiModule
+    JsonApiModule,
+    NgxDatatableModule
   ],
   declarations: [
     AppComponent,

@@ -6,10 +6,10 @@ import { JsonApiModelConfig, JsonApiModel, Attribute } from 'angular2-jsonapi';
 export class Profile extends JsonApiModel {
 
   @Attribute()
-  first_name: string;
+  firstname: string;
 
   @Attribute()
-  last_name: string;
+  lastname: string;
 
   @Attribute()
   address1: string;
