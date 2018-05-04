@@ -21,6 +21,10 @@ import { ReportsComponent } from './reports/reports.component';
 import { OfficersComponent } from './officers/officers.component';
 import { OrganisationsComponent } from './organisations/organisations.component';
 
+import { BootstrapThemeComponent } from './profiles/bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppNavbarComponent } from './app-navbar/app-navbar.component';
+
 @NgModule({
   imports: [
     HttpClientModule,
@@ -28,7 +32,8 @@ import { OrganisationsComponent } from './organisations/organisations.component'
     FormsModule,
     routing,
     JsonApiModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -37,7 +42,9 @@ import { OrganisationsComponent } from './organisations/organisations.component'
     ProfilesComponent,
     ReportsComponent,
     OfficersComponent,
-    OrganisationsComponent
+    OrganisationsComponent,
+    BootstrapThemeComponent,
+    AppNavbarComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
