@@ -17,4 +17,9 @@ export class Report extends JsonApiModel {
   @Attribute()
   longitude: number;
 
+  @Attribute()
+  name_of_profile: number;
+
+  @Attribute()
+  created_at: string;
 }
