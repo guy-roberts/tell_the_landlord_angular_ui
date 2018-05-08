@@ -16,12 +16,13 @@ import { HomeComponent } from './home/index';
 import { Datastore } from './services/datastore';
 
 import { RequestInterceptor } from './interceptors/request.interceptor';
+import { ResponseInterceptor } from './interceptors/response.interceptor';
+
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ReportsComponent } from './reports/reports.component';
 import { OfficersComponent } from './officers/officers.component';
 import { OrganisationsComponent } from './organisations/organisations.component';
 
-import { BootstrapThemeComponent } from './profiles/bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 
@@ -43,11 +44,11 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
     ReportsComponent,
     OfficersComponent,
     OrganisationsComponent,
-    BootstrapThemeComponent,
     AppNavbarComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
     AuthGuard,
     AuthenticationService,
     UserService,
