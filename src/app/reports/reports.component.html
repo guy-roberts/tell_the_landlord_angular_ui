@@ -1,0 +1,61 @@
+<div>
+  <p>
+    Reports
+  </p>
+
+  <ngx-datatable
+    [rows]="rows"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [externalPaging]="true"
+    [count]="page.totalElements"
+    [offset]="page.pageNumber"
+    [limit]="page.size"
+    [externalSorting]="true"
+    [loadingIndicator]="loading"
+    (sort)="onSort($event)"
+    (page)='setPage($event)' class="bootstrap"
+    [sorts]="[{prop: 'description', dir: 'desc'}, {prop: 'category', dir: 'desc'}]">
+
+    /* TODO Cannot sort by profile_id because its aliased to name_of_profile */
+
+    <ngx-datatable-column name="Created at" prop="created_at">
+      <ng-template let-column="column" ngx-datatable-header-template>
+        Created at
+      </ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Category" prop="category">
+      <ng-template let-column="column" ngx-datatable-header-template>
+        {{column.name}}
+      </ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Description" prop='description'>
+      <ng-template let-column="column" ngx-datatable-header-template>
+        {{column.name}}
+      </ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Name of profile" prop="name_of_profile" >
+      <ng-template let-column="column" ngx-datatable-header-template>
+        {{column.name}}
+      </ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <a href="http://bbc.co.uk/news">{{value}}</a>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+
+</div>

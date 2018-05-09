@@ -1,0 +1,27 @@
+<div>
+  <p>
+    Profiles
+  </p>
+  <input
+    type='text'
+    style='padding:8px;margin:15px auto;width:30%;'
+    placeholder='Last Name ?'
+    (keyup)='updateFilter($event)'
+  />
+  <ngx-datatable
+    [rows]="rows"
+    [columns]="columns"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [externalPaging]="true"
+    [count]="page.totalElements"
+    [offset]="page.pageNumber"
+    [limit]="page.size"
+    [externalSorting]="true"
+    [loadingIndicator]="loading"
+    (sort)="onSort($event)"
+    (page)='setPage($event)' class="bootstrap">
+  </ngx-datatable>
+</div>
