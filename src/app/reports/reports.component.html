@@ -30,6 +30,24 @@
       </ng-template>
     </ngx-datatable-column>
 
+    <ngx-datatable-column name="Reported by" prop="name_of_profile" >
+      <ng-template let-column="column" ngx-datatable-header-template>
+        {{column.name}}
+      </ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <a href="http://bbc.co.uk/news">{{value}}</a>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Their description" prop='description'>
+      <ng-template let-column="column" ngx-datatable-header-template>
+        {{column.name}}
+      </ng-template>
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </ng-template>
+    </ngx-datatable-column>
+
     <ngx-datatable-column name="Category" prop="category">
       <ng-template let-column="column" ngx-datatable-header-template>
         {{column.name}}
@@ -39,23 +57,6 @@
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column name="Description" prop='description'>
-      <ng-template let-column="column" ngx-datatable-header-template>
-        {{column.name}}
-      </ng-template>
-      <ng-template let-value="value" ngx-datatable-cell-template>
-        {{value}}
-      </ng-template>
-    </ngx-datatable-column>
-
-    <ngx-datatable-column name="Name of profile" prop="name_of_profile" >
-      <ng-template let-column="column" ngx-datatable-header-template>
-        {{column.name}}
-      </ng-template>
-      <ng-template let-value="value" ngx-datatable-cell-template>
-        <a href="http://bbc.co.uk/news">{{value}}</a>
-      </ng-template>
-    </ngx-datatable-column>
   </ngx-datatable>
 
 </div>

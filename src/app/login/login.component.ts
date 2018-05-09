@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       .subscribe(result => {
         if (result.auth_token) {
           this.loading = false;
-          this.router.navigate(['/']);
+          this.router.navigate(['/reports']);
         } else {
           this.loading = false;
         }
