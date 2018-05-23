@@ -27,10 +27,13 @@ export class Profile extends JsonApiModel {
   email: string;
 
   @Attribute()
-  phone: string;
+  mobile_phone: string;
 
   @Attribute()
-  gender: string;
+  home_phone: string;
+
+  @Attribute()
+  tenant_reference: string;
 
   @Attribute()
   notes: string;

@@ -20,7 +20,10 @@ export class ProfilesComponent implements OnInit {
     { name: 'Address 2', prop: 'address2'},
     { name: 'Address 3', prop: 'address3'},
     { name: 'Postcode', prop: 'postcode'},
-    { name: 'Email', prop: 'email'}
+    { name: 'Email', prop: 'email'},
+    { name: 'Home Phone', prop: 'home_phone'},
+    { name: 'Mobile Phone', prop: 'mobile_phone'},
+    { name: 'Tenant reference', prop: 'tenant_reference'}
   ];
 
   constructor(private datastore: Datastore) {

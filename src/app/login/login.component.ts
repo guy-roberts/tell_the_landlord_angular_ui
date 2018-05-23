@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       },
       msg => {
         this.loading = false;
-        this.error = 'Username or password is incorrect ' + msg;
+        this.error = 'Username or password or subdomain do not match';
       });
   }
 }
